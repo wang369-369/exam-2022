@@ -1,0 +1,51 @@
+var photo = $('#photo')
+
+
+$(() => {
+
+    //slideToRight()
+
+    $('#Start').on('click',slideToRight)
+    $('#Stop').on('click',stop)
+
+    $('#Legt').on('click',slideToLeft)
+    $('#Right').on('click',slideToRight)
+    $('#Up').on('click',slideToUp)
+    $('#Down').on('click',slideToDown)
+
+    function stop() { 
+        photo.stop()
+    }
+
+    function slideToRight() {
+        if (!photo.is(':animated')){
+            photo.animate(
+                { left: 300 }, 1000, 'swing'
+            )
+        }
+    }
+
+    function slideToLeft() {
+        if (!photo.is(':animated')){
+            photo.animate(
+            { left: 50 }, 1000, 'swing'
+            )
+        }
+    }
+
+    function slideToUp() {
+        if (!photo.is(':animated')){
+            photo.animate(
+                { top: 50 }, 1000, 'swing'
+            )
+        }
+    }
+
+    function slideToDown() {
+        if (!photo.is(':animated')){
+            photo.animate(
+                { top: 300 }, 1000, 'swing'
+            )
+        }
+    }
+})
